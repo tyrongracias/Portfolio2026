@@ -108,15 +108,37 @@ nav ul li a:hover{color:var(--o);}nav ul li a:hover::after{transform:scaleX(1);}
 
 /* ── PROJECTS ── */
 .proj-layout{display:flex;flex-direction:column;gap:18px;}
-.pf{display:grid;grid-template-columns:1fr 260px;background:var(--pn2);border:1px solid rgba(255,107,26,0.4);position:relative;overflow:hidden;transition:all 0.3s;}
-.pf:hover{border-color:var(--o);transform:translateY(-3px);box-shadow:0 8px 40px rgba(255,107,26,0.15);}
+.pf{
+  display:grid;
+  grid-template-columns:1fr 300px;
+  background:var(--pn2);
+  border:1px solid rgba(255,107,26,0.4);
+  border-left:4px solid var(--o);
+  position:relative;
+  overflow:hidden;
+  transition:transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.pf:hover{
+  border-color:var(--o);
+  transform:translateY(-3px);
+  box-shadow:0 8px 40px rgba(255,107,26,0.15);
+}
 .pf-badge{position:absolute;top:18px;right:18px;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--o);border:1px solid var(--o);padding:3px 8px;}
 .pc{padding:30px;}
-.prow{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.prow{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
 .pk{background:var(--pn2);border:1px solid var(--bd);padding:26px;position:relative;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%);transition:all 0.3s;}
 .pk:hover{border-color:rgba(255,107,26,0.5);transform:translateY(-3px);box-shadow:0 6px 30px rgba(255,107,26,0.1);}
 .pk::after{content:'';position:absolute;top:0;right:0;border-top:18px solid var(--pn);border-left:18px solid transparent;}
 .ptag{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:7px;}
+.ptag.o{color:var(--o);}
+.ptag.y{color:var(--y);}
+.ptag.t{color:var(--t);}
+.ptag.r{color:var(--r);}
+.ptag.c{color:#b388ff;}
 .gem{width:6px;height:6px;clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);display:inline-block;flex-shrink:0;}
 .gem.o{background:var(--o)}.gem.y{background:var(--y)}.gem.t{background:var(--t)}.gem.r{background:var(--r)}.gem.c{background:#b388ff;}
 .ptitle{font-family:'Orbitron',monospace;font-size:clamp(11px,1.4vw,15px);font-weight:700;letter-spacing:1px;color:#fff;margin-bottom:13px;line-height:1.4;}
@@ -129,8 +151,30 @@ nav ul li a:hover{color:var(--o);}nav ul li a:hover::after{transform:scaleX(1);}
 .pl.o{color:var(--o)}.pl.y{color:var(--y)}.pl.t{color:var(--t)}.pl.c{color:#b388ff;}
 
 /* visual panel */
-.pvis{background:repeating-linear-gradient(-45deg,rgba(255,107,26,0.03) 0,rgba(255,107,26,0.03) 1px,transparent 1px,transparent 12px);border-left:1px solid var(--bd);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px;}
-.bigicon{font-size:58px;filter:drop-shadow(0 0 16px rgba(255,107,26,0.4));}
+.pvis{
+  background:repeating-linear-gradient(
+    -45deg,
+    rgba(255,107,26,0.03) 0,
+    rgba(255,107,26,0.03) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+  border-left:1px solid var(--bd);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  padding:34px 24px;
+}
+.bigicon{
+  font-size:58px;
+  filter:drop-shadow(0 0 16px rgba(255,107,26,0.4));
+  transition:transform 0.25s ease;
+}
+.pf:hover .bigicon{
+  transform:scale(1.1);
+}
 .vislbl{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;color:rgba(255,107,26,0.5);text-align:center;text-transform:uppercase;}
 
 /* thumb strip */
@@ -226,8 +270,14 @@ footer{background:var(--dk);border-top:1px solid var(--bd);padding:18px 72px;dis
 @media(max-width:960px){
   #hero{grid-template-columns:1fr}.hero-right{display:none}
   .sec{padding:70px 24px}nav{padding:0 18px}nav ul{display:none}
+  .pf{
+  grid-template-columns:1fr;}
+  .pvis{
+  border-left:none;
+  border-top:1px solid var(--bd);
+  padding:18px;
+}
   .profile-grid,.sk-layout,.contact-inner{grid-template-columns:1fr}
-  .prow{grid-template-columns:1fr}.pf{grid-template-columns:1fr}.pvis{display:none}
   .gaming-strip,.prop-row{grid-template-columns:1fr 1fr}
   .xpi{grid-template-columns:100px 1px 1fr;gap:0 14px}
   footer{flex-direction:column;gap:8px;padding:16px;text-align:center}
@@ -385,7 +435,7 @@ footer{background:var(--dk);border-top:1px solid var(--bd);padding:18px 72px;dis
   <div class="proj-layout">
 
     <!-- ARCADE LOTTO FEATURED -->
-    <div class="pl">
+    <div class="pf">
       <div class="pc">
         <div class="ptag o"><span class="gem o"></span>BLOCKCHAIN · SOCIAL · BRAND · WEB3</div>
         <div class="ptitle">ARCADE LOTTO — Platform Brand &amp; Community</div>
@@ -426,8 +476,8 @@ footer{background:var(--dk);border-top:1px solid var(--bd);padding:18px 72px;dis
         </div>
         <a href="https://arcade-lotto.vercel.app" target="_blank" class="pl o">VISIT PLATFORM →</a>
         <a href="https://www.instagram.com/arcadelotto/" target="_blank" class="pl y">@ARCADELOTTO →</a>
-      </div>
-      <div class="pvis">
+        </div>
+        <div class="pvis">
         <div class="bigicon">🕹️</div>
         <div class="vislbl">ARCADE LOTTO<br/>WEB3 PLATFORM</div>
       </div>
@@ -617,9 +667,18 @@ footer{background:var(--dk);border-top:1px solid var(--bd);padding:18px 72px;dis
       <h3 class="ch">Ready to run a<br/><span>mission</span> together?</h3>
       <p class="csub">Available immediately in Dubai, UAE. Open to Product &amp; Media Specialist, Gaming Industry Operations, Community Manager, and Social Strategy roles. Let's build something worth playing.</p>
       <div class="clinks">
-        <a href="/cdn-cgi/l/email-protection#cbbfb2b9a4a5acb9aaa8a2aab88baca6aaa2a7e5a8a4a6" class="clink"><span class="ci">✉</span><span class="ct"><span class="__cf_email__" data-cfemail="3e4a474c5150594c5f5d575f4d7e59535f5752105d5153">[email&#160;protected]</span></span><span class="clab">EMAIL</span></a>
-        <a href="tel:+971561108096" class="clink"><span class="ci">📱</span><span class="ct">+971 561 108 096</span><span class="clab">PHONE</span></a>
-        <a href="https://www.linkedin.com/in/tyrongracias" target="_blank" class="clink"><span class="ci">💼</span><span class="ct">LinkedIn Profile</span><span class="clab">LINKEDIN</span></a>
+        <a href="mailto:tyrongracias@gmail.com" class="clink"><span class="ci">✉</span><span class="ct">tyrongracias@gmail.com</span><span class="clab">EMAIL</span></a>        
+        <a href="tel:+971561108096" class="clink"><span class="ci">☎</span><span class="ct">+971 561 108 096</span><span class="clab">PHONE</span></a>
+        <a href="https://www.linkedin.com/in/tyron-gracias-a99aa6149" target="_blank" class="clink"><span class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2" y="2" width="20" height="20" rx="3"></rect>
+  <line x1="7" y1="10" x2="7" y2="17"></line>
+  <circle cx="7" cy="7" r="1"></circle>
+  <path d="M11 17v-4a2 2 0 0 1 4 0v4"></path>
+</svg>
+</span>
+<span class="ct">LinkedIn Profile</span>
+<span class="clab">LINKEDIN</span>
+</a>
       </div>
     </div>
     <div class="cpanel">
@@ -635,4 +694,6 @@ footer{background:var(--dk);border-top:1px solid var(--bd);padding:18px 72px;dis
 </section>
 
 <footer>
-  <div class="fl">© 2026 T
+  <div class="fl">© 2026 TYRON GRACIAS</div>
+  <div class="fr">OPERATIVE PORTFOLIO</div>
+</footer>
