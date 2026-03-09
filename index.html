@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>TYRON GRACIAS // PORTFOLIO 2026</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0C'/><circle cx='16' cy='16' r='10' fill='none' stroke='%23FF6B1A' stroke-width='2'/><circle cx='16' cy='16' r='5' fill='%23FF6B1A'/></svg>"/>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
 <style>
 :root{
@@ -18,7 +19,7 @@ body{background:var(--dk);color:var(--w);font-family:'Barlow Condensed',sans-ser
 body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.07) 3px,rgba(0,0,0,0.07) 4px);pointer-events:none;z-index:9997;}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:56px;background:rgba(10,10,12,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 72px;height:56px;background:rgba(10,10,12,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);}
 .nav-logo{font-family:'Orbitron',monospace;font-size:12px;font-weight:900;color:var(--o);letter-spacing:3px;display:flex;align-items:center;gap:10px;}
 .nav-logo::before{content:'';display:block;width:8px;height:8px;background:var(--o);clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);animation:spin 4s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
@@ -26,20 +27,34 @@ nav ul{list-style:none;display:flex;}
 nav ul li a{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--g);text-decoration:none;text-transform:uppercase;padding:0 15px;height:56px;display:flex;align-items:center;border-right:1px solid rgba(255,255,255,0.04);transition:all 0.2s;position:relative;}
 nav ul li a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--o);transform:scaleX(0);transition:transform 0.2s;}
 nav ul li a:hover{color:var(--o);}nav ul li a:hover::after{transform:scaleX(1);}
-.nav-badge{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;padding:5px 12px;border:1px solid var(--o);color:var(--o);display:flex;align-items:center;gap:6px;}
-.pulse{width:6px;height:6px;background:var(--o);border-radius:50%;box-shadow:0 0 6px var(--o);animation:pa 1.6s infinite;}
+.nav-badge{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;padding:5px 12px;border:1px solid #39ff14;color:#39ff14;display:flex;align-items:center;gap:6px;}
+.pulse{width:6px;height:6px;background:#39ff14;border-radius:50%;box-shadow:0 0 8px #39ff14;animation:pa 1.6s infinite;}
 @keyframes pa{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.6)}}
 
 /* ── HERO ── */
 #hero{min-height:100vh;padding-top:56px;display:grid;grid-template-columns:1fr 400px;position:relative;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 40px,rgba(255,107,26,0.012) 40px,rgba(255,107,26,0.012) 42px);pointer-events:none;}
-.hero-left{padding:80px 60px 60px 72px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;}
+.hero-left{padding:80px 72px 60px 72px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;}
 .eyebrow{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:4px;color:var(--o);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px;opacity:0;animation:fu 0.6s 0.1s forwards;}
 .eyebrow::before{content:'';width:36px;height:1px;background:var(--o);box-shadow:0 0 8px var(--o);}
 .hero-name{font-family:'Orbitron',monospace;font-weight:900;font-size:clamp(32px,4.8vw,64px);line-height:0.95;letter-spacing:-1px;color:#fff;margin-bottom:10px;position:relative;opacity:0;animation:fu 0.6s 0.22s forwards;}
+@keyframes nameShake{0%,100%{transform:none}91%{transform:translateX(-2px) skewX(-1deg)}92%{transform:none}95%{transform:translateX(2px)}96%{transform:none}}
 .hero-name .line2{color:var(--o);display:block;}
-.hero-name::before{content:attr(data-text);position:absolute;left:2px;top:0;color:var(--r);clip-path:polygon(0 15%,100% 15%,100% 35%,0 35%);opacity:0;animation:glitch 5s infinite;}
-@keyframes glitch{0%,92%,100%{opacity:0}93%{opacity:.7;left:-3px}94%{opacity:0}96%{opacity:.5;left:3px}97%{opacity:0}}
+.hero-name::before{content:attr(data-text);position:absolute;left:2px;top:0;color:var(--r);opacity:0;animation:glitch 5s infinite;}
+.hero-name::after{content:attr(data-text);position:absolute;left:-2px;top:0;color:var(--y);opacity:0;animation:glitch 5s 1.5s infinite;filter:blur(0.5px);}
+@keyframes glitch{
+  0%,87%,100%{opacity:0;transform:none;left:0}
+  88%{opacity:.9;left:-5px;clip-path:polygon(0 8%,100% 8%,100% 28%,0 28%);color:#E8321C;transform:skewX(-2deg)}
+  89%{opacity:0}
+  91%{opacity:.7;left:5px;clip-path:polygon(0 52%,100% 52%,100% 72%,0 72%);color:#FF6B1A;transform:skewX(1deg)}
+  92%{opacity:0}
+  94%{opacity:1;left:-4px;clip-path:polygon(0 20%,100% 20%,100% 48%,0 48%);color:#E8321C;transform:skewX(-1deg)}
+  95%{opacity:0}
+  97%{opacity:.6;left:4px;clip-path:polygon(0 65%,100% 65%,100% 88%,0 88%);color:#FFD44A;transform:skewX(2deg)}
+  98%{opacity:0}
+  99%{opacity:.4;left:-2px;clip-path:polygon(0 35%,100% 35%,100% 55%,0 55%);color:#E8321C}
+  100%{opacity:0}
+}
 .hero-sub{font-size:16px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--g);margin-bottom:32px;opacity:0;animation:fu 0.6s 0.34s forwards;}
 .hero-sub span{color:var(--y);}
 .hero-desc{max-width:500px;font-size:17px;line-height:1.75;color:rgba(238,232,220,0.75);margin-bottom:40px;padding-left:20px;border-left:3px solid var(--o);opacity:0;animation:fu 0.6s 0.46s forwards;}
@@ -59,6 +74,8 @@ nav ul li a:hover{color:var(--o);}nav ul li a:hover::after{transform:scaleX(1);}
 @keyframes scan{0%{top:-80px}100%{top:100%}}
 .tv-art{display:flex;flex-direction:column;align-items:center;gap:20px;z-index:1;}
 .eye{width:110px;height:110px;border:3px solid var(--o);border-radius:50%;position:relative;box-shadow:0 0 30px rgba(255,107,26,0.3),inset 0 0 30px rgba(255,107,26,0.1);animation:ep 3s ease-in-out infinite;display:flex;align-items:center;justify-content:center;}
+.eye-photo{width:110px;height:110px;border-radius:50%;border:3px solid var(--o);object-fit:cover;object-position:top center;box-shadow:0 0 30px rgba(255,107,26,0.4),0 0 60px rgba(255,107,26,0.15);animation:ep 3s ease-in-out infinite;}
+.eye-placeholder{width:110px;height:110px;border-radius:50%;border:3px solid var(--o);background:var(--pn2);display:flex;align-items:center;justify-content:center;font-size:40px;box-shadow:0 0 30px rgba(255,107,26,0.3),inset 0 0 30px rgba(255,107,26,0.1);animation:ep 3s ease-in-out infinite;}
 @keyframes ep{0%,100%{box-shadow:0 0 30px rgba(255,107,26,0.3),inset 0 0 30px rgba(255,107,26,0.1)}50%{box-shadow:0 0 60px rgba(255,107,26,0.6),inset 0 0 40px rgba(255,107,26,0.25)}}
 .eye::before{content:'';position:absolute;width:36px;height:36px;background:var(--o);border-radius:50%;box-shadow:0 0 20px var(--o);animation:pupil 4s ease-in-out infinite;}
 @keyframes pupil{0%,100%{transform:translate(0,0)}25%{transform:translate(8px,-8px)}50%{transform:translate(-6px,6px)}75%{transform:translate(10px,4px)}}
@@ -93,22 +110,8 @@ nav ul li a:hover{color:var(--o);}nav ul li a:hover::after{transform:scaleX(1);}
 .alist li:last-child{border-bottom:none;}
 
 /* ── GAMING IDENTITY STRIP ── */
-.gaming-strip{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
-margin-top:40px;
-}
-.gcard{
-background:var(--pn2);
-border:1px solid var(--bd);
-padding:22px 24px;
-display:flex;
-align-items:flex-start;
-gap:16px;
-transition:border-color 0.2s,transform 0.2s;
-height:100%;
-}
+.gaming-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:40px;}
+.gcard{background:var(--pn2);border:1px solid var(--bd);padding:22px 24px;display:flex;align-items:center;gap:16px;transition:border-color 0.2s,transform 0.2s;}
 .gcard:hover{border-color:rgba(255,107,26,0.5);transform:translateY(-2px);}
 .gcard-icon{flex-shrink:0;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:8px;}
 .gcard-icon svg{width:28px;height:28px;}
@@ -121,66 +124,55 @@ height:100%;
 .gcard-tag{display:inline-block;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-top:6px;color:var(--o);}
 
 /* ── PROJECTS ── */
-.proj-layout{
-display:flex;
-flex-direction:column;
-gap:28px;
-}
-.pf{
-display:grid;
-grid-template-columns:1fr 300px;
-background:var(--pn2);
-border:1px solid rgba(255,107,26,0.4);
-position:relative;
-overflow:hidden;
-transition:all 0.3s;
-align-items:stretch;
-}
-
-.pf:hover{
-border-color:var(--o);
-transform:translateY(-3px);
-box-shadow:0 8px 40px rgba(255,107,26,0.15);
-}
+.proj-layout{display:flex;flex-direction:column;gap:18px;}
+.pf{display:block;background:var(--pn2);border:1px solid rgba(255,107,26,0.4);position:relative;overflow:hidden;transition:all 0.3s;}
+.pf:hover{border-color:var(--o);transform:translateY(-3px);box-shadow:0 8px 40px rgba(255,107,26,0.15);}
 .pf-badge{position:absolute;top:18px;right:18px;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--o);border:1px solid var(--o);padding:3px 8px;}
-.pc{
-padding:32px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-}
-.prow{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:22px;
-}
+.pc{padding:28px;}
+.prow{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
 .pk{background:var(--pn2);border:1px solid var(--bd);padding:26px;position:relative;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%);transition:all 0.3s;}
 .pk:hover{border-color:rgba(255,107,26,0.5);transform:translateY(-3px);box-shadow:0 6px 30px rgba(255,107,26,0.1);}
 .pk::after{content:'';position:absolute;top:0;right:0;border-top:18px solid var(--pn);border-left:18px solid transparent;}
 .ptag{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:7px;}
 .gem{width:6px;height:6px;clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);display:inline-block;flex-shrink:0;}
 .gem.o{background:var(--o)}.gem.y{background:var(--y)}.gem.t{background:var(--t)}.gem.r{background:var(--r)}.gem.c{background:#b388ff;}
-.ptitle{font-family:'Orbitron',monospace;font-size:clamp(11px,1.4vw,15px);font-weight:700;letter-spacing:1px;color:#fff;margin-bottom:13px;line-height:1.4;}
-.pdesc{font-size:15px;line-height:1.7;color:rgba(238,232,220,0.72);margin-bottom:16px;}
+.ptitle{
+font-family:'Orbitron',monospace;
+font-size:clamp(11px,1.4vw,15px);
+font-weight:700;
+letter-spacing:1px;
+color:#fff;
+margin-bottom:14px;
+line-height:1.4;
+}
+.pdesc{
+font-size:15px;
+line-height:1.75;
+color:rgba(238,232,220,0.72);
+margin-bottom:18px;
+max-width:92%;
+}
 .pdesc strong{color:var(--w);font-weight:700;}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
 .chip{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border:1px solid rgba(255,107,26,0.2);color:rgba(255,107,26,0.8);}
-.pl{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:gap 0.2s;margin-right:14px;}
+.pl{
+font-family:'Share Tech Mono',monospace;
+font-size:10px;
+letter-spacing:2px;
+text-transform:uppercase;
+text-decoration:none;
+display:inline-flex;
+align-items:center;
+gap:7px;
+transition:gap 0.2s;
+margin-right:14px;
+margin-top:6px;
+}
 .pl:hover{gap:12px;}
 .pl.o{color:var(--o)}.pl.y{color:var(--y)}.pl.t{color:var(--t)}.pl.c{color:#b388ff;}
 
 /* visual panel */
-.pvis{
-background:repeating-linear-gradient(-45deg,rgba(255,107,26,0.03) 0,rgba(255,107,26,0.03) 1px,transparent 1px,transparent 12px);
-border-left:1px solid var(--bd);
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-gap:16px;
-padding:24px;
-text-align:center;
-}
+.pvis{background:repeating-linear-gradient(-45deg,rgba(255,107,26,0.03) 0,rgba(255,107,26,0.03) 1px,transparent 1px,transparent 12px);border-left:1px solid var(--bd);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px;}
 .bigicon{font-size:58px;filter:drop-shadow(0 0 16px rgba(255,107,26,0.4));}
 .vislbl{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;color:rgba(255,107,26,0.5);text-align:center;text-transform:uppercase;}
 
@@ -256,7 +248,8 @@ text-align:center;
 .clink{display:flex;align-items:center;gap:14px;padding:13px 16px;text-decoration:none;border:1px solid transparent;transition:all 0.2s;}
 .clink:hover{border-color:var(--bd);background:rgba(255,107,26,0.04);}
 .clink:hover .ci{color:var(--o);}
-.ci{font-size:18px;width:22px;text-align:center;color:var(--g);transition:color 0.2s;}
+.ci{width:22px;height:22px;display:flex;align-items:center;justify-content:center;color:var(--g);transition:color 0.2s;flex-shrink:0;}
+.ci svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
 .ct{font-family:'Share Tech Mono',monospace;font-size:13px;letter-spacing:1px;color:var(--w);}
 .clab{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--g);text-transform:uppercase;margin-left:auto;}
 .cpanel{background:var(--pn2);border:1px solid var(--bd);padding:28px;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%);}
@@ -274,76 +267,44 @@ footer{background:var(--dk);border-top:1px solid var(--bd);padding:18px 72px;dis
 .fl span{color:var(--o);}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--dk)}::-webkit-scrollbar-thumb{background:var(--o)}
 
-@media(max-width:1100px){
-
-.pf{
-grid-template-columns:1fr;
+@media(max-width:960px){
+  #hero{grid-template-columns:1fr}.hero-right{display:none}
+  .sec{padding:70px 24px}nav{padding:0 24px}nav ul{display:none}
+  .profile-grid,.sk-layout,.contact-inner{grid-template-columns:1fr}
+  .prow{grid-template-columns:1fr}
+  .prow{grid-template-columns:1fr}
+  .gaming-strip{grid-template-columns:1fr}.prop-row{grid-template-columns:1fr 1fr}
+  .xpi{grid-template-columns:100px 1px 1fr;gap:0 14px}
+  footer{flex-direction:column;gap:8px;padding:16px;text-align:center}
 }
 
-.pvis{
-border-left:none;
-border-top:1px solid var(--bd);
-}
-
-.prow{
-grid-template-columns:1fr;
-}
-
-.gaming-strip{
-grid-template-columns:1fr 1fr;
-}
-
-}
-
-@media(max-width:720px){
-
-#hero{
-grid-template-columns:1fr;
-}
-
-.hero-right{
-display:none;
-}
-
-nav{
-padding:0 18px;
-}
-
-nav ul{
-display:none;
-}
-
-.sec{
-padding:70px 24px;
-}
-
-.profile-grid,
-.sk-layout,
-.contact-inner{
-grid-template-columns:1fr;
-}
-
-.gaming-strip{
-grid-template-columns:1fr;
-}
-
-.prop-row{
-grid-template-columns:1fr 1fr;
-}
-
-.xpi{
-grid-template-columns:100px 1px 1fr;
-gap:0 14px;
-}
-
-footer{
-flex-direction:column;
-gap:8px;
-padding:16px;
-text-align:center;
-}
-
-}
+/* ── CARD INTERNALS ── */
+.contrib{margin-bottom:18px;}
+.contrib-label{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.06);}
+.contrib-label.y{color:var(--y);border-color:rgba(255,212,74,0.15);}
+.contrib-label.c{color:#b388ff;border-color:rgba(179,136,255,0.15);}
+.contrib-label.o{color:var(--o);border-color:rgba(255,107,26,0.15);}
+.contrib-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:0;padding:0;}
+.contrib-list li{font-size:14px;line-height:1.6;color:rgba(238,232,220,0.75);padding-left:18px;position:relative;}
+.contrib-list li::before{content:'◆';position:absolute;left:0;top:3px;font-size:7px;}
+.contrib-list.y li::before{color:var(--y);}
+.contrib-list.c li::before{color:#b388ff;}
+.contrib-list.o li::before{color:var(--o);}
+/* video embed */
+.vid-wrap{position:relative;width:100%;padding-top:52%;margin-bottom:16px;overflow:hidden;border:1px solid rgba(145,70,255,0.2);background:#000;}
+.vid-wrap iframe{position:absolute;top:-12%;left:-3%;width:106%;height:124%;border:none;pointer-events:none;}
+.vid-wrap .vid-cover{position:absolute;inset:0;z-index:10;cursor:default;}
+/* IG grid inside card */
+.ig-mini{margin-top:14px;margin-bottom:16px;border:1px solid rgba(255,107,26,0.25);overflow:hidden;}
+.ig-mini-hd{display:flex;align-items:center;gap:8px;padding:8px 10px;background:rgba(255,107,26,0.05);border-bottom:1px solid rgba(255,107,26,0.15);}
+.ig-mini-hd img{width:24px;height:24px;border-radius:50%;object-fit:cover;border:1.5px solid var(--o);flex-shrink:0;}
+.ig-mini-name{font-family:'Orbitron',monospace;font-size:9px;font-weight:700;color:var(--w);letter-spacing:1px;}
+.ig-mini-sub{font-family:'Share Tech Mono',monospace;font-size:7px;color:var(--g);margin-left:4px;}
+.ig-mini-link{margin-left:auto;font-family:'Share Tech Mono',monospace;font-size:7px;letter-spacing:1px;color:var(--o);text-decoration:none;border:1px solid rgba(255,107,26,0.5);padding:2px 6px;text-transform:uppercase;flex-shrink:0;}
+.ig-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,107,26,0.08);}
+.ig-mini-grid a{display:block;aspect-ratio:1;overflow:hidden;}
+.ig-mini-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s;}
+.ig-mini-grid a:hover img{transform:scale(1.07);}
 </style>
 </head>
 <body>
@@ -368,25 +329,105 @@ text-align:center;
     <div class="eyebrow">OPERATIVE FILE // DUBAI, UAE</div>
     <h1 class="hero-name" data-text="TYRON GRACIAS">TYRON<span class="line2">GRACIAS</span></h1>
     <div class="hero-sub">Product &amp; Media Specialist · <span>Operations Strategist</span></div>
-    <p class="hero-desc">I don't just manage content — I build <strong>ecosystems</strong>. From blockchain-powered arcade platforms to PropTech investment products and Web3 gaming, I bridge gaming culture with sharp operations, brand storytelling, and community architecture that keeps people coming back.</p>
+    <p class="hero-desc">I don't just manage content — I build <strong>"digital ecosystems"</strong>. From blockchain-powered arcade platforms to PropTech investment products and Web3 gaming, I bridge gaming culture with sharp operations, brand storytelling, and community architecture that keeps people coming back.</p>
     <div class="hero-ctas">
       <a href="#projects" class="btn p">▶ VIEW CASE FILES</a>
       <a href="#contact" class="btn s">OPEN CHANNEL</a>
     </div>
   </div>
   <div class="hero-right">
-    <div class="tv-screen">
+    <div class="tv-screen" style="position:relative;overflow:hidden;">
+      <!-- Background photo -->
+      <img src="https://coffee-charming-turkey-533.mypinata.cloud/ipfs/bafkreigavahj56w2ld4ohn32e3i3ijofez7p3scyiqh3nlz4yecretjvju" alt="Tyron Gracias" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.55;filter:saturate(0.7) contrast(1.1);"/>
+      <!-- Orange gradient overlay bottom -->
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,12,0.9) 0%,rgba(10,10,12,0.3) 50%,rgba(255,107,26,0.08) 100%);pointer-events:none;"></div>
+      <!-- Scanline -->
       <div class="tv-scan"></div>
-      <div class="tv-art">
-        <div class="eye"></div>
-        <div class="tv-txt">OPERATIVE ONLINE<br/>// AUTHENTICATING</div>
+      <!-- Text overlay -->
+      <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;padding-bottom:28px;gap:6px;">
+        <div class="tv-txt" style="font-size:10px;letter-spacing:3px;opacity:0.9;">TYRON GRACIAS</div>
+        <div class="tv-txt" style="font-size:8px;letter-spacing:4px;opacity:0.6;">// OPERATIVE ONLINE</div>
       </div>
     </div>
     <div class="stats-grid">
       <div class="sc"><span class="sn">5+</span><span class="sl">Years XP</span></div>
-      <div class="sc"><span class="sn">35%</span><span class="sl">Ops Efficiency</span></div>
-      <div class="sc"><span class="sn">−18%</span><span class="sl">Cost Reduction</span></div>
-      <div class="sc"><span class="sn">3+</span><span class="sl">Communities</span></div>
+      <div class="sc"><span class="sn">85%</span><span class="sl">Ops Efficiency</span></div>
+      <div class="sc sc-barcode" style="grid-column:span 2;border-right:none;padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+        <a href="https://www.linkedin.com/in/tyron-gracias-a99aa6149" target="_blank" style="text-decoration:none;display:flex;flex-direction:column;gap:6px;">
+          <!-- SVG Barcode -->
+          <svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:40px;">
+            <!-- bars: varying widths to look like real barcode -->
+            <rect x="0"  y="0" width="2"  height="52" fill="#FF6B1A"/>
+            <rect x="4"  y="0" width="1"  height="52" fill="#FF6B1A"/>
+            <rect x="7"  y="0" width="3"  height="52" fill="#FF6B1A"/>
+            <rect x="12" y="0" width="1"  height="52" fill="#FF6B1A"/>
+            <rect x="15" y="0" width="2"  height="52" fill="#FF6B1A"/>
+            <rect x="19" y="0" width="4"  height="52" fill="#FF6B1A"/>
+            <rect x="25" y="0" width="1"  height="52" fill="#FF6B1A"/>
+            <rect x="28" y="0" width="2"  height="52" fill="#FF6B1A"/>
+            <rect x="32" y="0" width="1"  height="52" fill="#FF6B1A"/>
+            <rect x="35" y="0" width="3"  height="52" fill="#FF6B1A"/>
+            <rect x="40" y="0" width="2"  height="52" fill="#FF6B1A"/>
+            <rect x="44" y="0" width="1"  height="52" fill="#FF6B1A"/>
+            <rect x="47" y="0" width="4"  height="52" fill="#FF6B1A"/>
+            <rect x="53" y="0" width="1"  height="52" fill="#FF6B1A"/>
+            <rect x="56" y="0" width="2"  height="52" fill="#FF6B1A"/>
+            <rect x="60" y="0" width="3"  height="52" fill="#FF6B1A"/>
+            <rect x="65" y="0" width="1"  height="52" fill="#FF6B1A"/>
+            <rect x="68" y="0" width="2"  height="52" fill="#FF6B1A"/>
+            <rect x="72" y="0" width="1"  height="52" fill="#FF6B1A"/>
+            <rect x="75" y="0" width="4"  height="52" fill="#FF6B1A"/>
+            <rect x="81" y="0" width="2"  height="52" fill="#FF6B1A"/>
+            <rect x="85" y="0" width="1"  height="52" fill="#FF6B1A"/>
+            <rect x="88" y="0" width="3"  height="52" fill="#FF6B1A"/>
+            <rect x="93" y="0" width="2"  height="52" fill="#FF6B1A"/>
+            <rect x="97" y="0" width="1"  height="52" fill="#FF6B1A"/>
+            <rect x="100" y="0" width="2" height="52" fill="#FF6B1A"/>
+            <rect x="104" y="0" width="4" height="52" fill="#FF6B1A"/>
+            <rect x="110" y="0" width="1" height="52" fill="#FF6B1A"/>
+            <rect x="113" y="0" width="3" height="52" fill="#FF6B1A"/>
+            <rect x="118" y="0" width="2" height="52" fill="#FF6B1A"/>
+            <rect x="122" y="0" width="1" height="52" fill="#FF6B1A"/>
+            <rect x="125" y="0" width="2" height="52" fill="#FF6B1A"/>
+            <rect x="129" y="0" width="4" height="52" fill="#FF6B1A"/>
+            <rect x="135" y="0" width="1" height="52" fill="#FF6B1A"/>
+            <rect x="138" y="0" width="2" height="52" fill="#FF6B1A"/>
+            <rect x="142" y="0" width="3" height="52" fill="#FF6B1A"/>
+            <rect x="147" y="0" width="1" height="52" fill="#FF6B1A"/>
+            <rect x="150" y="0" width="2" height="52" fill="#FF6B1A"/>
+            <rect x="154" y="0" width="1" height="52" fill="#FF6B1A"/>
+            <rect x="157" y="0" width="4" height="52" fill="#FF6B1A"/>
+            <rect x="163" y="0" width="2" height="52" fill="#FF6B1A"/>
+            <rect x="167" y="0" width="1" height="52" fill="#FF6B1A"/>
+            <rect x="170" y="0" width="3" height="52" fill="#FF6B1A"/>
+            <rect x="175" y="0" width="2" height="52" fill="#FF6B1A"/>
+            <rect x="179" y="0" width="1" height="52" fill="#FF6B1A"/>
+            <rect x="182" y="0" width="2" height="52" fill="#FF6B1A"/>
+            <rect x="186" y="0" width="4" height="52" fill="#FF6B1A"/>
+            <rect x="192" y="0" width="1" height="52" fill="#FF6B1A"/>
+            <rect x="195" y="0" width="2" height="52" fill="#FF6B1A"/>
+            <rect x="199" y="0" width="3" height="52" fill="#FF6B1A"/>
+            <rect x="204" y="0" width="1" height="52" fill="#FF6B1A"/>
+            <rect x="207" y="0" width="2" height="52" fill="#FF6B1A"/>
+            <rect x="211" y="0" width="1" height="52" fill="#FF6B1A"/>
+            <rect x="214" y="0" width="4" height="52" fill="#FF6B1A"/>
+            <rect x="220" y="0" width="2" height="52" fill="#FF6B1A"/>
+            <rect x="224" y="0" width="1" height="52" fill="#FF6B1A"/>
+            <rect x="227" y="0" width="3" height="52" fill="#FF6B1A"/>
+            <rect x="232" y="0" width="2" height="52" fill="#FF6B1A"/>
+            <rect x="236" y="0" width="1" height="52" fill="#FF6B1A"/>
+            <rect x="239" y="0" width="2" height="52" fill="#FF6B1A"/>
+            <rect x="243" y="0" width="4" height="52" fill="#FF6B1A"/>
+            <rect x="249" y="0" width="1" height="52" fill="#FF6B1A"/>
+            <rect x="252" y="0" width="3" height="52" fill="#FF6B1A"/>
+            <rect x="257" y="0" width="2" height="52" fill="#FF6B1A"/>
+          </svg>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:2px;color:rgba(255,107,26,0.5);text-transform:uppercase;">SCAN TO CONNECT</span>
+            <span style="font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:1px;color:rgba(255,107,26,0.4);">TG-2604-UAE-0971-LI</span>
+          </div>
+        </a>
+      </div>
     </div>
     <div class="hero-loc">◆ LOCATION: <span>DUBAI, UAE</span> &nbsp;|&nbsp; VISA: <span>UAE VISIT</span></div>
   </div>
@@ -428,61 +469,6 @@ text-align:center;
       </div>
     </div>
   </div>
-
-  <!-- GAMING IDENTITY -->
-  <div style="margin-top:48px;">
-    <div style="font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:4px;color:var(--o);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px;">
-      <span style="width:28px;height:1px;background:var(--o);display:block;box-shadow:0 0 6px var(--o);"></span>
-      GAMING IDENTITY
-    </div>
-    <div class="gaming-strip">
-
-      <!-- Discord Clan -->
-      <div class="gcard">
-        <div class="gcard-icon discord-bg">
-          <!-- Discord SVG logo -->
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.033.053a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" fill="#5865F2"/>
-          </svg>
-        </div>
-        <div class="gcard-info">
-          <div class="gcard-title">CLAN [4.0.4]</div>
-          <div class="gcard-desc">SEA competitive gaming clan — CS2 &amp; Dota 2. Cross-timezone Discord ops, scrims, roster management.</div>
-          <span class="gcard-tag">DISCORD COMMUNITY LEAD</span>
-        </div>
-      </div>
-
-      <!-- Live Tribe -->
-      <div class="gcard">
-        <div class="gcard-icon discord-bg">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.033.053a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" fill="#5865F2"/>
-          </svg>
-        </div>
-        <div class="gcard-info">
-          <div class="gcard-title">THE LIVE TRIBE</div>
-          <div class="gcard-desc">Streamer collaboration community. Structured creator growth frameworks and cross-platform engagement systems.</div>
-          <span class="gcard-tag">FOUNDER · DISCORD LEAD</span>
-        </div>
-      </div>
-
-      <!-- Twitch -->
-      <div class="gcard">
-        <div class="gcard-icon twitch-bg">
-          <!-- Twitch SVG logo -->
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z" fill="#9146FF"/>
-          </svg>
-        </div>
-        <div class="gcard-info">
-          <div class="gcard-title">@NYTROMANIAC</div>
-          <div class="gcard-desc">Active Twitch streamer. Building gaming audiences, testing live community engagement strategies in real time.</div>
-          <a href="https://www.twitch.tv/nytromaniac" target="_blank" class="gcard-tag" style="color:#9146FF;text-decoration:none;">TWITCH.TV/NYTROMANIAC →</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
 </section>
 
 <!-- CASE FILES -->
@@ -496,71 +482,32 @@ text-align:center;
 
   <div class="proj-layout">
 
-    <!-- ARCADE LOTTO FEATURED -->
-    <div class="pf">
-      <div class="pf-badge">FEATURED</div>
-      <div class="pc">
-        <div class="ptag o"><span class="gem o"></span>BLOCKCHAIN · SOCIAL · BRAND · WEB3</div>
-        <div class="ptitle">ARCADE LOTTO — Platform Brand &amp; Community</div>
-        <p class="pdesc"><strong>Arcade Lotto</strong> is a decentralised lottery platform built by Get Thrifty LLP — where old-school arcade nostalgia meets Web3. Running on the <strong>Polygon (PoS) Network</strong> with <strong>USDT</strong> as the participation currency, the platform uses <strong>API3's QRNG</strong> (Quantum Random Number Generator) for provably fair, on-chain winner selection — making every draw transparent and tamper-proof.</p>
-        <p class="pdesc">Players choose from multiple jackpot pools, buy up to 5 tickets per wallet, and three winners are randomly selected each round — splitting <strong>90% of the jackpot</strong> (40% / 30% / 20%). The platform also features a <strong>referral program</strong> for passive income, a <strong>Pixel Points Arena</strong> for bonus engagement, and a live leaderboard. No extra fees beyond on-chain gas.</p>
-        <p class="pdesc">As part of the core product operations team, I shaped the platform's <strong>brand voice, social media presence (@arcadelotto)</strong>, and community storytelling — translating complex on-chain mechanics into content that felt playful and genuinely gamer-native. Result: full platform launched <strong>2 months ahead of schedule</strong>, operational costs cut by 18%.</p>
-
-        <!-- Platform feature pills -->
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
-          <div style="background:rgba(255,107,26,0.08);border:1px solid rgba(255,107,26,0.25);padding:8px 14px;display:flex;flex-direction:column;gap:2px;">
-            <span style="font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--g);text-transform:uppercase;">Network</span>
-            <span style="font-family:'Orbitron',monospace;font-size:11px;font-weight:700;color:var(--y);">Polygon PoS</span>
-          </div>
-          <div style="background:rgba(255,107,26,0.08);border:1px solid rgba(255,107,26,0.25);padding:8px 14px;display:flex;flex-direction:column;gap:2px;">
-            <span style="font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--g);text-transform:uppercase;">Currency</span>
-            <span style="font-family:'Orbitron',monospace;font-size:11px;font-weight:700;color:var(--y);">USDT</span>
-          </div>
-          <div style="background:rgba(255,107,26,0.08);border:1px solid rgba(255,107,26,0.25);padding:8px 14px;display:flex;flex-direction:column;gap:2px;">
-            <span style="font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--g);text-transform:uppercase;">Randomness</span>
-            <span style="font-family:'Orbitron',monospace;font-size:11px;font-weight:700;color:var(--y);">API3 QRNG</span>
-          </div>
-          <div style="background:rgba(255,107,26,0.08);border:1px solid rgba(255,107,26,0.25);padding:8px 14px;display:flex;flex-direction:column;gap:2px;">
-            <span style="font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--g);text-transform:uppercase;">Jackpot Split</span>
-            <span style="font-family:'Orbitron',monospace;font-size:11px;font-weight:700;color:var(--y);">90% to Winners</span>
-          </div>
-          <div style="background:rgba(255,107,26,0.08);border:1px solid rgba(255,107,26,0.25);padding:8px 14px;display:flex;flex-direction:column;gap:2px;">
-            <span style="font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--g);text-transform:uppercase;">Max Tickets</span>
-            <span style="font-family:'Orbitron',monospace;font-size:11px;font-weight:700;color:var(--y);">5 per Wallet</span>
-          </div>
-          <div style="background:rgba(255,107,26,0.08);border:1px solid rgba(255,107,26,0.25);padding:8px 14px;display:flex;flex-direction:column;gap:2px;">
-            <span style="font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--g);text-transform:uppercase;">Winners/Round</span>
-            <span style="font-family:'Orbitron',monospace;font-size:11px;font-weight:700;color:var(--y);">3 Selected</span>
-          </div>
-        </div>
-
-        <div class="chips">
-          <span class="chip">Web3</span><span class="chip">Polygon PoS</span><span class="chip">USDT</span><span class="chip">API3 QRNG</span><span class="chip">Social Strategy</span><span class="chip">Brand Voice</span><span class="chip">Community</span><span class="chip">Product Ops</span><span class="chip">Referral System</span>
-        </div>
-        <a href="https://arcade-lotto.vercel.app" target="_blank" class="pl o">VISIT PLATFORM →</a>
-        <a href="https://www.instagram.com/arcadelotto/" target="_blank" class="pl y">@ARCADELOTTO →</a>
-      </div>
-      <div class="pvis">
-        <div class="bigicon">🕹️</div>
-        <div class="vislbl">ARCADE LOTTO<br/>WEB3 PLATFORM</div>
-      </div>
-    </div>
-
-    <!-- ROW: DivvyUp + MBA -->
+    <!-- ROW 1: DivvyUp + Meme Arena -->
     <div class="prow">
-
       <!-- DIVVYUP -->
       <div class="pk">
-        <div class="ptag y"><span class="gem y"></span>PROPTECH · FRACTIONAL OWNERSHIP · BRAND</div>
-        <div class="ptitle">DIVVYUP &amp; GROW — Digital Asset &amp; Investment Platform</div>
-        <p class="pdesc">
-          <strong>DivvyUp &amp; Grow</strong> is a PropTech company enabling fractional ownership of luxury real estate. Investors co-own properties, earn passive income, and manage their portfolios through an exclusive client-facing digital application.
-        </p>
-        <p class="pdesc">
-          I helped co-design the <strong>digital asset and portfolio management app</strong> — an exclusive access platform where clients can view available properties, invest fractionally, and track their investments. I also led <strong>brand placement and business positioning</strong> to establish DivvyUp's identity in the PropTech space, alongside operational delivery and SOP implementation.
-        </p>
+        <div class="ptag y"><span class="gem y"></span>PROPTECH · FRACTIONAL OWNERSHIP · UX · BRAND</div>
+        <div class="ptitle">DIVVYUP &amp; GROW — Fractional Real Estate Investment Platform</div>
+
+        <p class="pdesc"><strong>DivvyUp &amp; Grow</strong> was created to make luxury real estate investment accessible to a broader group of investors. Traditionally, high-value properties are limited to ultra-wealthy buyers due to large capital requirements and complex ownership structures.</p>
+
+        <p class="pdesc">The platform introduces a <strong>fractional ownership model</strong> where each luxury property is divided into <strong>8 investment shares</strong>, allowing individuals to participate in premium real estate while lowering the entry barrier. The goal was to combine institutional-grade investing with a seamless digital experience — giving investors transparency, liquidity, and simplified ownership.</p>
+
+        <p class="pdesc">I helped co-design the <strong>digital asset and portfolio management app</strong> — an exclusive access platform where clients can view available properties, invest fractionally, and track their investments. I also led <strong>brand placement and business positioning</strong> to establish DivvyUp's identity in the PropTech space.</p>
+
+        <div class="contrib">
+          <div class="contrib-label y">// KEY CONTRIBUTIONS</div>
+          <ul class="contrib-list y">
+            <li>Designed the end-to-end product experience for a fractional real estate investment platform — enabling users to discover, evaluate, and invest in luxury properties through a structured ownership model</li>
+            <li>Developed core user flows and platform architecture including investor onboarding, property discovery, investment commitment, and portfolio tracking</li>
+            <li>Designed investor dashboards and property detail pages focused on clarity and conversion — helping users understand ownership shares, expected returns, and investment details</li>
+            <li>Conceptualised a secondary resale marketplace — allowing investors to trade property shares and introduce liquidity into fractional ownership</li>
+            <li>Defined operational workflows for investor management and legal documentation, supporting the platform's backend processes for managing fractional ownership</li>
+          </ul>
+        </div>
+
         <div class="chips">
-          <span class="chip">PropTech</span><span class="chip">Fractional Ownership</span><span class="chip">Digital Asset App</span><span class="chip">Brand Positioning</span><span class="chip">Ops Management</span>
+          <span class="chip">PropTech</span><span class="chip">Fractional Ownership</span><span class="chip">UX Design</span><span class="chip">Product Architecture</span><span class="chip">Investor Dashboard</span><span class="chip">Resale Marketplace</span><span class="chip">Brand Positioning</span><span class="chip">Ops Management</span>
         </div>
         <a href="https://divvyupandgrow.com" target="_blank" class="pl y">VISIT PLATFORM →</a>
       </div>
@@ -568,14 +515,27 @@ text-align:center;
       <!-- MEME BATTLE ARENA -->
       <div class="pk">
         <div class="ptag c"><span class="gem c"></span>WEB3 GAMING · FINANCIAL ARCHITECTURE · BLOCKCHAIN</div>
-        <div class="ptitle">MEME BATTLE ARENA — Financial Game Integration</div>
-        <p class="pdesc">
-          <strong>Meme Battle Arena</strong> was a Web3 competitive gaming platform built at Get Thrifty LLP — a Battle Royale and Team Deathmatch game backed by the <strong>1-UP token</strong> with a win-to-earn economic model. Players deposited tokens, competed, and winners claimed from reward pools.
-        </p>
-        <p class="pdesc">
-          I built the <strong>financial game integration architecture</strong> — designing token flow systems, reward pool mechanics, and the on-chain transaction logic that underpinned the economy. The platform was later renamed <em>Turbo Battle Arena</em> and expanded further.
-        </p>
-        <!-- Tweet snippet -->
+        <div class="ptitle">MEME BATTLE ARENA — 2D Battle Royale</div>
+        <!-- YouTube embed muted looping -->
+        <div style="position:relative;width:100%;padding-top:40%;margin-bottom:14px;overflow:hidden;border:1px solid rgba(145,70,255,0.2);background:#000;">
+          <!-- iframe pushed out so all 4 YouTube UI edges are hidden -->
+          <iframe src="https://www.youtube.com/embed/2EZ-ivpJ_s0?autoplay=1&mute=1&loop=1&playlist=2EZ-ivpJ_s0&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3&fs=0&playsinline=1" style="position:absolute;top:-60px;left:-60px;width:calc(100% + 120px);height:calc(100% + 120px);border:none;pointer-events:none;" allow="autoplay;encrypted-media;fullscreen" loading="lazy"></iframe>
+          <!-- full cover overlay — blocks every YouTube UI element and hover state -->
+          <div style="position:absolute;inset:0;z-index:10;background:transparent;cursor:default;"></div>
+        </div>
+        <p class="pdesc"><strong>Meme Battle Arena</strong> was a Web3-powered 2D battle royale game developed at <strong>KA Labs</strong>, designed to merge competitive gaming with decentralised finance mechanics. The platform introduced a <strong>win-to-earn model</strong> where players could stake tokens to enter matches and compete for rewards distributed directly from prize pools.</p>
+        <p class="pdesc">The blockchain mechanics and economic structure were researched and developed at <strong>Get Thrifty LLP</strong>, using the <strong>1-UP token</strong> as the core asset powering gameplay participation and rewards. By combining competitive gameplay with tokenised incentives, the platform aimed to create a transparent and self-sustaining in-game economy.</p>
+        <p class="pdesc">Following its development phase, the project transitioned to new ownership and was later rebranded as <em>Turbo Battle Arena</em>.</p>
+        <div class="contrib">
+          <div class="contrib-label c">// KEY CONTRIBUTIONS</div>
+          <ul class="contrib-list c">
+            <li>Designed the financial architecture for the game's Web3 economy, structuring how tokens flowed between players, match pools, and reward distributions</li>
+            <li>Developed the win-to-earn mechanics, enabling players to deposit tokens to enter battle royale matches and compete for pooled rewards</li>
+            <li>Defined reward pool logic and distribution systems, ensuring transparent and fair payouts for match winners</li>
+            <li>Structured on-chain transaction flows governing player deposits, prize pools, and reward withdrawals</li>
+            <li>Collaborated on integrating blockchain mechanics into gameplay systems, bridging game design with decentralised finance infrastructure</li>
+          </ul>
+        </div>
         <div class="tweet-box">
           <div class="tweet-hd">
             <div class="tweet-av">🎮</div>
@@ -591,14 +551,68 @@ text-align:center;
           <a href="https://x.com/i/status/1473905676665581571" target="_blank" class="tweet-cta">VIEW ORIGINAL POST ON X →</a>
         </div>
         <div class="chips">
-          <span class="chip">1-UP Token</span><span class="chip">Win-to-Earn</span><span class="chip">Financial Architecture</span><span class="chip">Web3 Gaming</span><span class="chip">On-chain Logic</span>
+          <span class="chip">1-UP Token</span><span class="chip">Win-to-Earn</span><span class="chip">Financial Architecture</span><span class="chip">2D Battle Royale</span><span class="chip">KA Labs</span><span class="chip">On-chain Logic</span>
         </div>
         <a href="https://www.tbagames.io" target="_blank" class="pl c">VIEW TBA (RENAMED) →</a>
         <a href="https://x.com/i/status/1473905676665581571" target="_blank" class="pl o">ORIGINAL POST →</a>
+          </div> <!-- END MEME ARENA CARD -->
+          </div> <!-- END ROW 1 -->
+
+  <!-- ROW 2 -->
+  <div class="prow">
+    <!-- ARCADE LOTTO FEATURED -->
+    <div class="pk">
+    <div class="ptag o"><span class="gem o"></span>BLOCKCHAIN · SOCIAL · BRAND · WEB3</div>
+    <div class="ptitle">ARCADE LOTTO — Arcade-style Online Lotto Experience</div>
+
+    <p class="pdesc"><strong>Arcade Lotto</strong> was a Web3-powered decentralised lottery platform designed to merge classic arcade-style gaming nostalgia with blockchain-powered transparency and automation. Players participated in lottery rounds powered by smart contracts, ensuring verifiable outcomes and automated reward distribution.</p>
+
+    <p class="pdesc">Built by <strong>Get Thrifty LLP</strong>, the platform aimed to create a community-driven lottery ecosystem where gameplay mechanics, referral incentives, and reward structures were embedded directly into the product experience — while maintaining a strong social presence across digital communities.</p>
+
+    <div class="contrib">
+      <div class="contrib-label o">// KEY CONTRIBUTIONS</div>
+      <ul class="contrib-list o">
+        <li>Designed the core lottery mechanics and participation flow</li>
+        <li>Architected the referral and reward-splitting system</li>
+        <li>Designed smart contract username identity system</li>
+        <li>Produced social media marketing assets and video creatives</li>
+        <li>Helped grow the Discord and Twitter community ecosystem</li>
+      </ul>
+    </div>
+
+    <!-- IG GRID -->
+    <div class="ig-mini">
+      <div class="ig-mini-hd">
+        <img src="https://coffee-charming-turkey-533.mypinata.cloud/ipfs/bafkreig3knejy654dpzvo5qzhzfld7rjdpgxepgeqmphhmjidkjsrhyjmi">
+        <span class="ig-mini-name">arcadelotto</span>
+        <span class="ig-mini-sub">738 followers</span>
+        <a href="https://www.instagram.com/arcadelotto/" target="_blank" class="ig-mini-link">VIEW →</a>
       </div>
 
+      <div class="ig-mini-grid">
+        <a href="#"><img src="https://coffee-charming-turkey-533.mypinata.cloud/ipfs/bafybeigbnybpjikwkmp5ikeehavqmqbr4w3vqcykx5xnviggmfa47s5574"></a>
+        <a href="#"><img src="https://coffee-charming-turkey-533.mypinata.cloud/ipfs/bafybeia4z4hbavmhmqx4jdwmgz4t7bzvy37hq7pe74tffwxmncd6nkl3m4"></a>
+        <a href="#"><img src="https://coffee-charming-turkey-533.mypinata.cloud/ipfs/bafybeidx7lurh2bet6zopbyj7ze44a6fpeef56o7pr3dwkuzws5cjwlzcy"></a>
+      </div>
     </div>
-  </div>
+
+    <div class="chips">
+      <span class="chip">Game Mechanics Design</span>
+      <span class="chip">Smart Contract Username</span>
+      <span class="chip">Referral System</span>
+      <span class="chip">Reward Architecture</span>
+      <span class="chip">Social Strategy</span>
+    </div>
+
+    <a href="https://arcade-lotto-website.vercel.app" target="_blank" class="pl o">VISIT WEBSITE →</a>
+    <a href="https://arcade-lotto.vercel.app" target="_blank" class="pl y">LAUNCH APP →</a>
+    <a href="https://www.instagram.com/arcadelotto/" target="_blank" class="pl t">@ARCADELOTTO →</a>
+    </div> <!-- END ARCADE LOTTO CARD -->
+
+</div> <!-- END ROW 2 -->
+
+</div> <!-- END proj-layout -->
+
 </section>
 
 <!-- SKILLS -->
@@ -717,10 +731,56 @@ text-align:center;
   </div>
 </section>
 
+<!-- GAMING IDENTITY -->
+<section class="sec alt">
+  <div class="sh">
+    <span class="snum">// 05</span>
+    <h2 class="stitle">GAMING IDENTITY</h2>
+    <div class="sline"></div>
+    <span class="ssub">IN THE WILD</span>
+  </div>
+  <div class="gaming-strip">
+
+    <div class="gcard">
+      <div class="gcard-icon discord-bg">
+        <img src="https://coffee-charming-turkey-533.mypinata.cloud/ipfs/bafkreibagk7grvclq5k6gnzkmhax7chebnyyrufzwaew4putx6wbykxwyq" alt="discord" />
+      </div>
+      <div class="gcard-info">
+        <div class="gcard-title">CLAN [4.0.4]</div>
+        <div class="gcard-desc">SEA competitive gaming clan — CS2 &amp; Dota 2. Cross-timezone Discord ops, scrims, roster management.</div>
+        <span class="gcard-tag">DISCORD COMMUNITY LEAD</span>
+      </div>
+    </div>
+
+    <div class="gcard">
+      <div class="gcard-icon discord-bg">
+        <img src="https://coffee-charming-turkey-533.mypinata.cloud/ipfs/bafkreibagk7grvclq5k6gnzkmhax7chebnyyrufzwaew4putx6wbykxwyq" alt="discord" />
+      </div>
+      <div class="gcard-info">
+        <div class="gcard-title">THE LIVE TRIBE</div>
+        <div class="gcard-desc">Streamer collaboration community. Structured creator growth frameworks and cross-platform engagement systems.</div>
+        <span class="gcard-tag">FOUNDER · DISCORD LEAD</span>
+      </div>
+    </div>
+
+    <div class="gcard">
+      <div class="gcard-icon twitch-bg">
+                <img src="https://coffee-charming-turkey-533.mypinata.cloud/ipfs/bafkreieceozs2mlmtnzbcg35237tsjitwxo32e265gpdsz4zvvpx63xezu" alt="Twitch" />
+      </div>
+      <div class="gcard-info">
+        <div class="gcard-title">@NYTROMANIAC</div>
+        <div class="gcard-desc">Active Twitch streamer. Building gaming audiences and testing live community engagement strategies in real time.</div>
+        <a href="https://www.twitch.tv/nytromaniac" target="_blank" class="gcard-tag" style="color:#9146FF;text-decoration:none;">TWITCH.TV/NYTROMANIAC →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="sec alt">
   <div class="sh">
-    <span class="snum">// 05</span>
+    <span class="snum">// 06</span>
     <h2 class="stitle">OPEN CHANNEL</h2>
     <div class="sline"></div>
     <span class="ssub">SEND SIGNAL</span>
@@ -729,10 +789,13 @@ text-align:center;
     <div>
       <h3 class="ch">Ready to run a<br/><span>mission</span> together?</h3>
       <p class="csub">Available immediately in Dubai, UAE. Open to Product &amp; Media Specialist, Gaming Industry Operations, Community Manager, and Social Strategy roles. Let's build something worth playing.</p>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--o);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px;">
+        <span style="width:20px;height:1px;background:var(--o);display:block;"></span>GET IN TOUCH
+      </div>
       <div class="clinks">
-        <a href="/cdn-cgi/l/email-protection#cbbfb2b9a4a5acb9aaa8a2aab88baca6aaa2a7e5a8a4a6" class="clink"><span class="ci">✉</span><span class="ct"><span class="__cf_email__" data-cfemail="3e4a474c5150594c5f5d575f4d7e59535f5752105d5153">[email&#160;protected]</span></span><span class="clab">EMAIL</span></a>
-        <a href="tel:+971561108096" class="clink"><span class="ci">📱</span><span class="ct">+971 561 108 096</span><span class="clab">PHONE</span></a>
-        <a href="https://www.linkedin.com/in/tyrongracias" target="_blank" class="clink"><span class="ci">💼</span><span class="ct">LinkedIn Profile</span><span class="clab">LINKEDIN</span></a>
+        <a href="/cdn-cgi/l/email-protection#b2c6cbc0dddcd5c0d3d1dbd3c19491848689d5dfd3dbde9cd1dddf" class="clink"><span class="ci"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></span><span class="ct">tyrongracias&#64;gmail.com</span><span class="clab">EMAIL</span></a>
+        <a href="tel:+971561108096" class="clink"><span class="ci"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg></span><span class="ct">+971 561 108 096</span><span class="clab">PHONE</span></a>
+        <a href="https://www.linkedin.com/in/tyron-gracias-a99aa6149" target="_blank" class="clink"><span class="ci"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="12.01"/></svg></span><span class="ct">LinkedIn Profile</span><span class="clab">LINKEDIN</span></a>
       </div>
     </div>
     <div class="cpanel">
@@ -742,9 +805,4 @@ text-align:center;
       <div class="cf"><span class="cfl">Role Target</span><span class="cfv">Gaming Industry Ops &amp; Specialist</span></div>
       <div class="cf"><span class="cfl">Industries</span><span class="cfv">Gaming · Web3 · PropTech · Media</span></div>
       <div class="cf"><span class="cfl">Languages</span><span class="cfv">English (Fluent)</span></div>
-      <div class="cf"><span class="cfl">Availability</span><div class="avail"><div class="adot"></div>IMMEDIATE</div></div>
-    </div>
-  </div>
-</section>
-
-<footer> <div class="fl">© 2026 TYRON GRACIAS</div> </footer>
+  
