@@ -476,10 +476,11 @@ footer{background:var(--dk);border-top:1px solid var(--bd);padding:18px 72px;dis
         <div class="ptag c"><span class="gem c"></span>WEB3 GAMING · FINANCIAL ARCHITECTURE · BLOCKCHAIN</div>
         <div class="ptitle">MEME BATTLE ARENA — 2D Battle Royale</div>
         <!-- YouTube embed muted looping -->
-        <div style="position:relative;width:100%;padding-top:40%;margin-bottom:14px;overflow:hidden;border:1px solid rgba(145,70,255,0.2);">
-          <iframe src="https://www.youtube.com/embed/2EZ-ivpJ_s0?autoplay=1&mute=1&loop=1&playlist=2EZ-ivpJ_s0&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3" style="position:absolute;top:-10%;left:-2%;width:104%;height:120%;border:none;pointer-events:none;" allow="autoplay;encrypted-media" allowfullscreen loading="lazy"></iframe>
-          <!-- transparent overlay blocks all hover/click interaction -->
-          <div style="position:absolute;inset:0;z-index:2;cursor:default;"></div>
+        <div style="position:relative;width:100%;padding-top:40%;margin-bottom:14px;overflow:hidden;border:1px solid rgba(145,70,255,0.2);background:#000;">
+          <!-- iframe pushed out so all 4 YouTube UI edges are hidden -->
+          <iframe src="https://www.youtube.com/embed/2EZ-ivpJ_s0?autoplay=1&mute=1&loop=1&playlist=2EZ-ivpJ_s0&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3&fs=0&playsinline=1" style="position:absolute;top:-60px;left:-60px;width:calc(100% + 120px);height:calc(100% + 120px);border:none;pointer-events:none;" allow="autoplay;encrypted-media;fullscreen" loading="lazy"></iframe>
+          <!-- full cover overlay — blocks every YouTube UI element and hover state -->
+          <div style="position:absolute;inset:0;z-index:10;background:transparent;cursor:default;"></div>
         </div>
         <p class="pdesc"><strong>Meme Battle Arena</strong> was a Web3-powered 2D battle royale game developed at <strong>KA Labs</strong>, designed to merge competitive gaming with decentralised finance mechanics. The platform introduced a <strong>win-to-earn model</strong> where players could stake tokens to enter matches and compete for rewards distributed directly from prize pools.</p>
         <p class="pdesc">The blockchain mechanics and economic structure were researched and developed at <strong>Get Thrifty LLP</strong>, using the <strong>1-UP token</strong> as the core asset powering gameplay participation and rewards. By combining competitive gameplay with tokenised incentives, the platform aimed to create a transparent and self-sustaining in-game economy.</p>
