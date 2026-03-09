@@ -448,7 +448,9 @@ footer{background:var(--dk);border-top:1px solid var(--bd);padding:18px 72px;dis
         <div class="ptitle">MEME BATTLE ARENA — 2D Battle Royale</div>
         <!-- YouTube embed muted looping -->
         <div style="position:relative;width:100%;padding-top:40%;margin-bottom:14px;overflow:hidden;border:1px solid rgba(145,70,255,0.2);">
-          <iframe src="https://www.youtube.com/embed/2EZ-ivpJ_s0?autoplay=1&mute=1&loop=1&playlist=2EZ-ivpJ_s0&controls=0&showinfo=0&rel=0&modestbranding=1" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allow="autoplay;encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube.com/embed/2EZ-ivpJ_s0?autoplay=1&mute=1&loop=1&playlist=2EZ-ivpJ_s0&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3" style="position:absolute;top:-10%;left:-2%;width:104%;height:120%;border:none;pointer-events:none;" allow="autoplay;encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <!-- transparent overlay blocks all hover/click interaction -->
+          <div style="position:absolute;inset:0;z-index:2;cursor:default;"></div>
         </div>
         <p class="pdesc"><strong>Meme Battle Arena</strong> was a Web3 2D Battle Royale platform built at <strong>KA Labs</strong>. The blockchain mechanics were researched and structured at <strong>Get Thrifty LLP</strong> — backed by the <strong>1-UP token</strong> with a win-to-earn economic model. Players deposited tokens, competed in battle royale matches, and winners claimed directly from reward pools.</p>
         <p class="pdesc">My role was to build the <strong>financial game integration architecture</strong> — designing token flow systems, reward pool mechanics, and the on-chain transaction logic that underpinned the entire economy. Meme Arena later passed to new ownership and was renamed <em>Turbo Battle Arena</em>.</p>
